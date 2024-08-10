@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R KHUSHI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <i class="fa-solid fa-bars" onClick="openmenu()"></i>
+            <ul id="sidemenu">
+                <li><a href="#header">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <!-- <li><a href="#services">SERVICES</a></li> -->
+                <li><a href="#project">PROJECTS</a></li>
+                <li><a href="#contacts">CONTACT</a></li>
+            <i class="fa-sharp fa-solid fa-circle-xmark" onClick="closemenu()"></i>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Software Developer</p>
+            <h1>Hello, I'm <span>R khushi</span><br>from raipur chattisgarh.<br>As a fresher i am so excited<br>to work with new<br>technologies.</h1>
+        </div>
+    </div>
+</div>
+<!-- --------ABOUT_ME------ -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/me1.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Summary</h1>
+                <p>Highly skilled and Results-oriented java Developer, web applications, SQL, data visualization, problem-solving, and data-driven decision-making. Strong collaborator, continuously learning to deliver efficient solutions.
+                    Eager to Kick-start a rewarding career in software development.
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="openTab('Skills')">Skills</p>
+                    <p class="tab-links" onclick="openTab('Experience')">Experience</p>
+                    <p class="tab-links" onclick="openTab('Education')">Education</p>
+                </div>
+                <div class="tab-contents  active-tab" id="Skills">
+                    <ul>
+                        <li><span>Web Development</span><br> Website development</li>
+                        <li><span>java Development</span><br> Backend development</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Experience">
+                    <ul>
+                        <li><span>Fresher</span><br>Full-Stack Developer</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>2021</span><br>schooling Completed</li>
+                        <li><span>2025</span><br>Bachelor's of Computer Application</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -----------Contact-------- -->
+<div id="contacts">
+    <div class="container">
+        <div class="row">
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea rows="6" name="Message" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+            <div class="contact-left">
+                <h1 class="sub-title">Let's have a talk</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> rkhushi252004@gmail.com</p>
+                <p><i class="fa-duotone fa-solid fa-phone"></i> +91 6232162040</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-behance"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div>
+                    <a href="images/R_khushi.pdf" download class="btn btn2">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function openTab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<script>
+
+var sidemen = document.getElementById("sidemenu");
+
+function openmenu(){
+    sidemen.style.right = "0";
+}
+function closemenu(){
+    sidemen.style.right = "-200px";
+}
+</script> 
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxu0rOHHbB-q5KaBs_tzqjZmMAQ-4shd-IhXCZ90UEHJR4DFRorQjMJ99rC0_w16q-6Qg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            }, 5000);
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+</html>
