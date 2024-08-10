@@ -1,0 +1,316 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box ;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: rgb(70, 13, 24);
+    color: white;
+    height: 100vh;
+}
+#header{
+    height: 100vh;
+    width: 35%;
+    background-image: url(images/me.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    padding-left: 20%;
+}
+nav{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-left: 120%;
+}
+nav ul {
+    display: flex;
+    padding: 10px ;
+    margin: 20px;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+nav ul li a{
+    font-size: 18px;
+    color:#ffff;
+    text-decoration: none;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    white-space: nowrap; 
+    padding-left: 120%;
+}
+.header-text p {
+    font-size: 24px;
+    color: #b0adadd6;
+}
+.header-text h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+.header-text span {
+    color: #df2950;
+}
+/* ---summary---- */
+#about .container {
+    display: center;
+    flex-direction: column;
+    padding: 50px 0;
+    color: rgb(244, 241, 241);
+}
+.row {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img {
+    width: 90%;
+    height: auto;
+    border-radius: 100px;
+    padding: 50px;
+    justify-content: flex-end;
+}
+.about-col-2 {
+    padding: 50px 50px;
+    flex-basis: 60%;
+    align-self: flex-start;
+}
+.about-col-2 h1 {
+    font-size: 70px;
+    margin-top: 30px;
+    color: #ffffff;
+}
+.sub-title{
+    color: #fff;
+    font-size:60px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right:50px;
+    font-size: 20px;
+    font-weight: 1000;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background: #e1f864;
+    left: 0;
+    bottom: -8px;
+    position: absolute;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 60%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: rgb(215, 245, 66);
+    font-size: 17px;
+}
+.tab-contents {
+    display: none;
+}
+.tab-contents.active-tab {
+    display: block;
+}
+/* -------contact-------- */
+#contacts {
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 100px; 
+    margin-right: auto; 
+    width: 100%;
+}
+.contact-left{
+    flex-basis: 35%;
+    text-align: left;
+    margin-right: 70px;
+}
+.contact-right{
+    flex-basis: 35%;
+    text-align: left;
+}
+.contact-left .sub-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.contact-left p{
+    margin-top: 20px;
+}
+.contact-left p i{
+    margin-top: 10px;
+    font-size: 25px;
+    color: rgb(249, 152, 223);
+}
+.social-icons{
+    text-decoration: none;
+    font-size: 30px;
+    margin-top: 35px;
+    display: inline-block;
+    color:rgb(228, 87, 87);
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: aquamarine;
+    transform: translateY(-5px);
+}
+.row{
+    margin-right: 100px;
+}
+.contact-right form{
+    width: 100%;
+
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #cffaf7;
+    padding: 15px;
+    margin: 15px 0;
+    color: #5e1011;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.btn{
+    background-color: rgb(107, 243, 232);
+    border-radius: 4px;
+    font-size: medium;
+    padding: 10px;
+}
+.btn:hover{
+    background-color: #3379dc;
+}
+.btn.btn2{
+    background-color:rgb(245, 109, 220);
+    font-size: 20px;
+    padding:10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.btn.btn2:hover{
+    background-color: #60e6e6;
+}
+#span{
+    color: white;
+    margin-top:-20px;
+    display: block;
+
+}
+/* ----------css for small screen-------- */
+@media only screen and (max-width: 768px) {
+    nav .fa-bars,
+    nav .fa-circle-xmark {
+        display: block; 
+        font-size: 30px;
+    }
+    nav .fa-circle-xmark{
+        top:0;
+        right:0;
+     }              /* correct it */
+    .header-text {
+        margin-top: 50%;
+        font-size: 10px;
+        text-align: center;
+    }
+    .header-text h1 {
+        font-size: 30px;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 15px 0;
+    }
+    nav ul {
+        background: #010508;
+        top: 0; 
+        right: 0;
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+        z-index: 2;
+        padding-top: 50px;
+        transition: 0.5s;
+        right: -100%;
+    }
+    .sub-title {
+        font-size: 16px;
+    }
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+        padding: 10px 5px; 
+        text-align: center;
+    }
+    .about-col-1 img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4rem;
+        }
+    .row { 
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        padding: 10px; /* Reduce padding for small screens */
+    }
+    .contact {
+        flex-direction: column !important; /* Stack elements vertically */
+        padding: 10px; /* Reduce padding for small screens */
+    }
+}
+@media only screen and (min-width: 769px) {
+    nav .fa-bars,
+    nav .fa-circle-xmark {
+        display: none !important; 
+    }
+}
